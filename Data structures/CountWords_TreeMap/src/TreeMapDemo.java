@@ -1,5 +1,7 @@
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class TreeMapDemo {
@@ -20,15 +22,18 @@ public class TreeMapDemo {
 		return words;
 	}
 	
-	private static void Print(Map<String,Integer> words){
+	private static void Print(Map<String,Integer> words){								//Java 8, Lambda expression
 		words.forEach((k,v) -> System.out.println( k + " --> " + v + " times."));
 	}
+	
+	/*private static void Print(Map<String,Integer> words){								// Standard for each in map
+		for(Map.Entry<String, Integer> i : words.entrySet()) System.out.println( i.getKey() + " --> " + i.getValue() + " times.");
+	} */
 
 	public static void main(String[] args) {
 		
 		Map<String,Integer> wordsCount = countWords(TEXT);
 		Print(wordsCount);
-
 	}
 }
 
